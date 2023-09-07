@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>譜面投稿</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="upload/style.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">譜面投稿</h1>
+        <form id="chartForm" enctype="multipart/form-data" class="mt-4">
+            <div class="form-group">
+                <label for="title">タイトル</label>
+                <input type="text" class="form-control" id="title" name="title" autocomplete="off" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="composer">作曲者</label>
+                <input type="text" class="form-control" id="composer" name="composer" autocomplete="off" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="chart_author">譜面作者</label>
+                <input type="text" class="form-control" id="chart_author" name="chart_author" autocomplete="off" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="difficulty">難易度</label>
+                <input type="range" class="form-control-range" id="difficultySlider" name="difficulty" min="1" max="50">
+                <p class="mt-2"><strong></strong> <span id="difficultyValue">1</span></p>
+            </div>
+            
+            <div class="form-group">
+                <label for="description">説明欄</label>
+                <textarea class="form-control" id="description" name="description" autocomplete="off" rows="4"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="bgm_file">BGM(.mp3 or .wav)</label>
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="bgm_file" name="bgm_file" accept=".mp3,.wav" required>
+                    <label class="custom-file-label" for="bgm_file" data-browse="選択">ファイルを選択してください</label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="jacket_file">Jacket(.png or .jpg)</label>
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="jacket_file" name="jacket_file" accept=".png,.jpg" required>
+                    <label class="custom-file-label" for="jacket_file" data-browse="選択">ファイルを選択してください</label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="chart_file">Chart(.sus)</label>
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="chart_file" name="chart_file" accept=".sus" required>
+                    <label class="custom-file-label" for="chart_file" data-browse="選択">ファイルを選択してください</label>
+                </div>
+            </div>
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-success btn-block">投稿</button>
+            </div>
+        </form>
+    </div>
+    <script src="upload/script.js"></script>
+</body>
+</html>

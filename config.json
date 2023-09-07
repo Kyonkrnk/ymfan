@@ -1,0 +1,12 @@
+{
+    "Server-Name": "test-server",
+    "Sonolus-Version": "0.7.2",
+    "Server-Banner-Path": "/assets/banner.jpg",
+    "Server_Url": "",
+
+    "endpoint_url": "",
+    "aws_access_key_id": "",
+    "aws_secret_access_key": "l",
+    "S3_url": "",
+    "bucket_name": "storage"
+}

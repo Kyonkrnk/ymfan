@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "-ymfan-poetry"
+version = "0.1.0"
+description = ""
+authors = ["kyonkrnk <kyontax.sk15@gmail.com>"]
+readme = "README.md"
+packages = [{include = "ymfan_poetry"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+uvicorn = "^0.23.2"
+fastapi = "^0.103.1"
+pillow = "^10.0.0"
+pydub = "^0.25.1"
+boto3 = "^1.28.41"
+python-multipart = "^0.0.6"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
