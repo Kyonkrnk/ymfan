@@ -14,6 +14,7 @@ pillow = "^10.0.0"
 pydub = "^0.25.1"
 boto3 = "^1.28.41"
 python-multipart = "^0.0.6"
+requests = "^2.31.0"
 
 
 [build-system]
