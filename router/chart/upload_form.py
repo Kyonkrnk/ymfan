@@ -6,12 +6,12 @@ import os
 
 router = APIRouter()
 
-@router.get("/upload")
+@router.get("/up_chart")
 async def send_form():
-    path = os.path.join("static", "upload", "index.html")
+    path = os.path.join("static", "up_chart", "index.html")
     return FileResponse(path)
 
-@router.get("/upload/{filename}")
+@router.get("/up_chart/{filename}")
 async def send_script_css(filename: str):
-    path = os.path.join("static", "upload", filename)
+    path = os.path.join("static", "up_chart", filename)
     return FileResponse(path)

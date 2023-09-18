@@ -10,6 +10,7 @@ import random, string
 import datetime
 import hashlib
 import json
+import requests
 
 with open("config.json", encoding="utf-8") as f:
     config = json.load(f)
@@ -17,7 +18,7 @@ with open("config.json", encoding="utf-8") as f:
 
 router = APIRouter()
 
-@router.post("/upload")
+@router.post("/up_chart")
 async def upload_chart(
     title: str = Form(...),
     composer: str = Form(...),
@@ -50,7 +51,9 @@ async def upload_chart(
     img.save(jacket, format='JPEG')
     jacket.seek(0)
     # 譜面
-    #
+    url = config["convert_url"]
+    response = requests.post(url, params={"chart_id": chart_id}, data=chart)
+    chart = response.content
 
     # 背景画像を生成
     background_path = os.path.join("router", "chart", "bg", "background.png")
@@ -93,6 +96,6 @@ async def upload_chart(
         chart_hash = chart_hash,
         background_url = f"{config['S3_url']}/ymfan/{chart_id}/background.png", 
         background_hash = background_hash,
-        post_at = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-        update_at = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        post_at = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=9))).strftime('%Y-%m-%d %H:%M:%S'),
+        update_at = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=9))).strftime('%Y-%m-%d %H:%M:%S')
     )
