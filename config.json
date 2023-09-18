@@ -8,5 +8,7 @@
     "aws_access_key_id": "",
     "aws_secret_access_key": "l",
     "S3_url": "",
-    "bucket_name": "storage"
+    "bucket_name": "storage",
+
+    "convert_url": ""
 }
