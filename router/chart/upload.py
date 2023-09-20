@@ -68,6 +68,11 @@ async def upload_chart(
     background.seek(0)
     jacket.seek(0)
 
+    # データ読み込み
+    bgm = bgm.read()
+    jacket = jacket.read()
+    background = background.read()
+    
     # アップロード
     upload_s3(content=bgm, path=f"ymfan/{chart_id}/bgm.mp3")
     upload_s3(content=jacket, path=f"ymfan/{chart_id}/jacket.jpg")
