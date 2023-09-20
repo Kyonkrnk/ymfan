@@ -24,7 +24,7 @@ async def server_info():
 
     # levels
     lists = []
-    level_info = get_data_from_database("5")
+    level_info = get_data_from_database("20")
     for data in level_info:
         lists.append(info_levels_items(data))
     body["levels"] = {

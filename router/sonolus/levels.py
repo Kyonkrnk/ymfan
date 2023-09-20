@@ -65,9 +65,9 @@ async def levelinfo(chart_id: str):
                     "url": "http://8.130.81.127:8000/data/b83d6e65e91fde752ea2f1b9fa875bfa939d7888"
                 },
                 "data": {
-                    "hash": "1a3bd2b6bdcd766dca9bf605bf00e348d9808680",
+                    "hash": "855e7ed1ba17ef94e7bfcd89f87e4c67c43279ab",
                     "type": "EngineData",
-                    "url": "http://8.130.81.127:8000/data/1a3bd2b6bdcd766dca9bf605bf00e348d9808680"
+                    "url": "http://8.130.81.127:8000/data/855e7ed1ba17ef94e7bfcd89f87e4c67c43279ab"
                 },
                 "description": "A recreation of World Dai Star: Dream's Stellarium engine in Sonolus.\nVersion: 1.0.0.20230903_beta\n\nGithub Repository\nhttps://github.com/SonolusHaniwa/sonolus-sirius-engine",
                 "effect": {
@@ -118,24 +118,29 @@ async def levelinfo(chart_id: str):
                     "version": 2
                 },
                 "playData": {
-                    "hash": "1a3bd2b6bdcd766dca9bf605bf00e348d9808680",
+                    "hash": "855e7ed1ba17ef94e7bfcd89f87e4c67c43279ab",
                     "type": "EnginePlayData",
-                    "url": "http://8.130.81.127:8000/data/1a3bd2b6bdcd766dca9bf605bf00e348d9808680"
+                    "url": "http://8.130.81.127:8000/data/855e7ed1ba17ef94e7bfcd89f87e4c67c43279ab"
+                },
+                "previewData": {
+                    "hash": "02c067b20ebcd6561ec138b1d6d33073004080d8",
+                    "type": "EnginePreviewData",
+                    "url": "http://8.130.81.127:8000/data/02c067b20ebcd6561ec138b1d6d33073004080d8"
                 },
                 "skin": {
                     "author": "LittleYang0531",
                     "data": {
-                        "hash": "bb86d7cc9c0c8f00e51bf62e813b2857ac35807d",
+                        "hash": "a1737cf0cb97549d0a662a769461fb752720c32d",
                         "type": "SkinData",
-                        "url": "http://8.130.81.127:8000/data/bb86d7cc9c0c8f00e51bf62e813b2857ac35807d"
+                        "url": "http://8.130.81.127:8000/data/a1737cf0cb97549d0a662a769461fb752720c32d"
                     },
                     "description": "",
                     "name": "sirius",
                     "subtitle": "World Dai Star: Dream's Stellarium",
                     "texture": {
-                        "hash": "120939a9227e1890aea388d560a976af5739c82d",
+                        "hash": "1d85380813552d515b77d4e5e8cf31e51537cdc8",
                         "type": "SkinTexture",
-                        "url": "http://8.130.81.127:8000/data/120939a9227e1890aea388d560a976af5739c82d"
+                        "url": "http://8.130.81.127:8000/data/1d85380813552d515b77d4e5e8cf31e51537cdc8"
                     },
                     "thumbnail": {
                         "hash": "4d84f6ea99c28b7787161f012b353baf4c1752e7",
@@ -143,7 +148,7 @@ async def levelinfo(chart_id: str):
                         "url": "http://8.130.81.127:8000/data/4d84f6ea99c28b7787161f012b353baf4c1752e7"
                     },
                     "title": "Sirius",
-                    "version": 3
+                    "version": 4
                 },
                 "subtitle": "World Dai Star: Dream's Stellarium",
                 "thumbnail": {
@@ -157,7 +162,7 @@ async def levelinfo(chart_id: str):
                     "type": "EngineTutorialData",
                     "url": "http://8.130.81.127:8000/data/0a00ae6b688d19af9e8394e67c2df3236ecdb5e1"
                 },
-                "version": 9
+                "version": 10
             },
             "name": f"ymfan-{level_info[0]}",
             "preview": {
@@ -167,9 +172,9 @@ async def levelinfo(chart_id: str):
             },
             "rating": int(level_info[4]),
             "title": level_info[1],
-            "useBackground": {
+        "useBackground": {
             "item": {
-                "author": "ワールドダイスター 夢のステラリウム",
+                "author": "きょん",
                 "configuration": {
                     "hash": "d6d0a3f33b1be72cf49c3e5fe7ef248ee8a0a5fa",
                     "type": "BackgroundConfiguration",
@@ -182,18 +187,18 @@ async def levelinfo(chart_id: str):
                 },
                 "description": "Version: 1.0.0",
                 "image": {
-                    "hash": "975870ced76d888fcc2e0dbabcca4497931b4772",
+                    "hash": level_info[13],
                     "type": "BackgroundImage",
-                    "url": "http://8.130.81.127:8000/data/975870ced76d888fcc2e0dbabcca4497931b4772"
+                    "url": level_info[12]
                 },
-                "name": "sirius-60",
-                "subtitle": "与那国緋花里、阿伎留カミラ",
+                "name": f"ymfan-bg-{level_info[0]}",
+                "subtitle": "ymfan Background",
                 "thumbnail": {
-                    "hash": "6a03a3b3583e6e6e3003d10692e8bfa4b3876909",
+                    "hash": level_info[9],
                     "type": "BackgroundThumbnail",
-                    "url": "http://8.130.81.127:8000/data/6a03a3b3583e6e6e3003d10692e8bfa4b3876909"
+                    "url": level_info[8]
                 },
-                "title": "シル・ヴ・プレジデント",
+                "title": level_info[1],
                 "version": 2
             },
             "useDefault": False
