@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 from fastapi.responses import JSONResponse
 from database.db import get_data_from_database
-from router.sonolus.data import info_levels_items
+from router.sonolus.level_info import get_level_info
 
 import json
 
@@ -24,9 +24,9 @@ async def server_info():
 
     # levels
     lists = []
-    level_info = get_data_from_database("20")
-    for data in level_info:
-        lists.append(info_levels_items(data))
+    level_info_list = get_data_from_database("20")
+    for level_info in level_info_list:
+        lists.append(get_level_info(level_info))
     body["levels"] = {
         "items": lists,
         "search": {}

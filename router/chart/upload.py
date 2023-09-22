@@ -33,7 +33,7 @@ async def upload_chart(
     characters = string.digits + "abcdef"
     chart_id = ''.join(random.choice(characters) for _ in range(5))
 
-    # bgm、ジャケット、譜面を変換してS3(R2)へアップロード
+    # データを読み込む
     bgm = await bgm_file.read()
     jacket = await jacket_file.read()
     chart = await chart_file.read()
@@ -68,22 +68,21 @@ async def upload_chart(
     background.seek(0)
     jacket.seek(0)
 
-    # データ読み込み
+    # sha1hashを計算
     bgm = bgm.read()
     jacket = jacket.read()
     background = background.read()
     
+    bgm_hash = hashlib.sha1(bytes(bgm)).hexdigest()
+    jacket_hash = hashlib.sha1(bytes(jacket)).hexdigest()
+    chart_hash = hashlib.sha1(bytes(chart)).hexdigest()
+    background_hash = hashlib.sha1(bytes(background)).hexdigest()
+
     # アップロード
     upload_s3(content=bgm, path=f"ymfan/{chart_id}/bgm.mp3")
     upload_s3(content=jacket, path=f"ymfan/{chart_id}/jacket.jpg")
     upload_s3(content=chart, path=f"ymfan/{chart_id}/chart.gz")
     upload_s3(content=background, path=f"ymfan/{chart_id}/background.png")
-
-    # sha1hashを計算
-    bgm_hash = hashlib.sha1(bytes(bgm)).hexdigest()
-    jacket_hash = hashlib.sha1(bytes(jacket)).hexdigest()
-    chart_hash = hashlib.sha1(bytes(chart)).hexdigest()
-    background_hash = hashlib.sha1(bytes(background)).hexdigest()
     
     # 曲のデータをデータベース上に保存
     save_chart_info(
